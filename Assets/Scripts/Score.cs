@@ -1,19 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class Score : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
+    [SerializeField] private GameObject _loosePanel;
 
-    public int CountOfPoints = 0;
+    public int CountOfPointsOnLevel = 0;
+    public static int CountOfPoints;
 
     private void Update()
     {
-        _scoreText.text = CountOfPoints.ToString();
+        _scoreText.text = CountOfPointsOnLevel.ToString();
 
-        if (CountOfPoints < 0)
-            CountOfPoints = 0;
+        if (CountOfPointsOnLevel < 0)
+            _loosePanel.SetActive(true);
     }
 }

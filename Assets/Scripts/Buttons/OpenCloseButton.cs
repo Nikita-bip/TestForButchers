@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OpenCloseButton : MonoBehaviour
@@ -11,11 +9,13 @@ public class OpenCloseButton : MonoBehaviour
     {
         _panel.SetActive(true);
         _button.SetActive(false);
+        Time.timeScale = 0f;
     }
 
-    public void ClosePanel ()
+    public void ClosePanel()
     {
         _panel.SetActive(false);
         _button.SetActive(true);
+        Time.timeScale = 1f;
     }
 }

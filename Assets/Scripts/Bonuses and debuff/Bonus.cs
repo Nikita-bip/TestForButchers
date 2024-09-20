@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bonus : MonoBehaviour
@@ -12,7 +10,6 @@ public class Bonus : MonoBehaviour
         if (other.TryGetComponent(out Player player))
         {
             _audioSource.PlayOneShot(_pickupSound);
-            Debug.Log("+");
             Destroy(this.gameObject);
         }
     }
